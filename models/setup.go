@@ -28,7 +28,7 @@ func ConnectDatabase() {
 	if err != nil {
 		panic(err)
 	}
-	defer db.Close()
+	// defer db.Close()
 
 	err = db.Ping()	// sql.Open only validates the arguments provided
 	// Ping forces the code to actually open up a connection to the database.	
