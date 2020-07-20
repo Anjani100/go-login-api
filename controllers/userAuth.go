@@ -19,16 +19,14 @@ func CreateUser(c *gin.Context) {
 		return
 	}
 
-	user := models.User{Username: input.Username, Password: input.Password}
 	sqlStatement := `
-		INSERT INTO User (Username, Password)
+		INSERT INTO Users (Username, Password)
 		VALUES ($1, $2)
 		RETURNING id`
 	id := 0
-	err1 := models.DB.QueryRow(sqlStatement, user.Username, user.Password).Scan(&id)
+	err1 := models.DB.QueryRow(sqlStatement, input.Username, input.Password).Scan(&id)
 	if err1 != nil {
 		panic(err1)
 	}
 	fmt.Println("New record ID is:", id)
-	c.JSON(http.StatusOK, gin.H{"data": user})
 }

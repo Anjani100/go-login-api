@@ -17,7 +17,7 @@ const (
 	user     = "postgres"
 	password = "admin"
 	dbname   = "GoUser"
-)							// connecting to local database
+)							// parameters for connecting to local database
 
 
 func ConnectDatabase() {
@@ -35,7 +35,7 @@ func ConnectDatabase() {
 	if err != nil {
 		panic(err)
 	}
-	
+
 	DB = db
 
 	fmt.Println("Successfully connected!")
