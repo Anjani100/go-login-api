@@ -16,8 +16,8 @@ func main() {
 
 	models.ConnectDatabase()
 
-	r.GET("/register", controllers.CreateUser)
-	r.GET("/login", controllers.LoginUser)
+	r.POST("/register", controllers.CreateUser)
+	r.POST("/login", controllers.LoginUser)
 
 	r.Run()
 }
