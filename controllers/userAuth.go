@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 	"github.com/gin-gonic/gin"
 	"github.com/Anjani100/go-login-api/models"
@@ -19,7 +20,15 @@ func CreateUser(c *gin.Context) {
 	}
 
 	user := models.User{Username: input.Username, Password: input.Password}
-	models.db.Create(&user)
-
+	sqlStatement := `
+		INSERT INTO User (Username, Password)
+		VALUES ($1, $2)
+		RETURNING id`
+	id := 0
+	err1 := models.DB.QueryRow(sqlStatement, user.Username, user.Password).Scan(&id)
+	if err1 != nil {
+		panic(err1)
+	}
+	fmt.Println("New record ID is:", id)
 	c.JSON(http.StatusOK, gin.H{"data": user})
 }

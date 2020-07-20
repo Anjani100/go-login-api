@@ -4,6 +4,7 @@ import (
 	// "net/http"
 	"github.com/gin-gonic/gin"
 	"github.com/Anjani100/go-login-api/models"
+	"github.com/Anjani100/go-login-api/controllers"
 )
 
 func main() {
@@ -14,6 +15,8 @@ func main() {
 	// })
 
 	models.ConnectDatabase()
+
+	r.POST("/register", controllers.CreateUser)
 
 	r.Run()
 }
