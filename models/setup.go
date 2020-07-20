@@ -9,7 +9,8 @@ import (
 	// we will never directly reference the package in our code.
 )
 
-var DB *sql.DB	// To access the database from other directories (in this case, for the controllers folder)
+var DB *sql.DB	// Used to access the database from other directories as well
+
 
 const (
 	host     = "localhost"
