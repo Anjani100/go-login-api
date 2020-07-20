@@ -30,3 +30,10 @@ func CreateUser(c *gin.Context) {
 	}
 	fmt.Println("New record ID is:", id)
 }
+
+func LoginUser(c *gin.Context) {
+	sqlStatement := `SELECT * FROM Users`
+	data, _ := models.DB.Query(sqlStatement)
+  
+	c.JSON(http.StatusOK, gin.H{"data": data})
+}
