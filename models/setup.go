@@ -8,7 +8,9 @@ import (
 	// '_' is used to inform Go that we still want this included even though
 	// we will never directly reference the package in our code.
 )
-  
+
+var DB *sql.DB
+
 const (
 	host     = "localhost"
 	port     = 5432
@@ -16,6 +18,7 @@ const (
 	password = "admin"
 	dbname   = "GoUser"
 )							// connecting to local database
+
 
 func ConnectDatabase() {
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
@@ -32,6 +35,8 @@ func ConnectDatabase() {
 	if err != nil {
 		panic(err)
 	}
+	
+	DB = db
 
 	fmt.Println("Successfully connected!")
 }
