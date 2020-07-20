@@ -11,6 +11,7 @@ import (
 
 var DB *sql.DB	// Used to access the database from other directories as well
 
+
 const (
 	host     = "localhost"
 	port     = 5432
