@@ -28,3 +28,8 @@ For this purposes, we will be doing all the coding in the **controllers** direct
 Finally, we are done. Now let's test the API.
 Fire up your POSTMAN and send a POST request to *127.0.0.1:8080/register* and send the Username and Password in JSON format in the **Body->Raw** section and see if it sends you the necessary data. Do the same for login after this.
 That is all for this project. Hope this helps!
+
+#### Resources Used: 
+* [LogRocket](https://blog.logrocket.com/how-to-build-a-rest-api-with-golang-using-gin-and-gorm/)
+* [Calhoun.io](https://www.calhoun.io/connecting-to-a-postgresql-database-with-gos-database-sql-package/)
+* [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
