@@ -9,7 +9,7 @@ import (
 	// we will never directly reference the package in our code.
 )
 
-var DB *sql.DB
+var DB *sql.DB	// Used to access the database from other directories as well
 
 const (
 	host     = "localhost"
