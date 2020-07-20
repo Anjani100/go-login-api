@@ -19,4 +19,7 @@ func CreateUser(c *gin.Context) {
 	}
 
 	user := models.User{Username: input.Username, Password: input.Password}
+	models.db.Create(&user)
+
+	c.JSON(http.StatusOK, gin.H{"data": user})
 }
