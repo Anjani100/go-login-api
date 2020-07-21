@@ -29,6 +29,10 @@ Finally, we are done. Now let's test the API.
 Fire up your POSTMAN and send a POST request to *127.0.0.1:8080/register* and send the Username and Password in JSON format in the **Body->Raw** section and see if it sends you the necessary data. Do the same for login after this.
 That is all for this project. Hope this helps!
 
+### Update
+
+I have replaced the return type of requests from JSON to HTTP, so now it is available in forms format. You can fire up your browser and visit *127.0.0.1:8080* and then fill up the register form to sign up yourself. All the styling files are in the html folder and the database schema is provided in the db directory. I've used [Materialize-css](https://materializecss.com/) for styling purposes.
+
 #### Resources Used: 
 * [LogRocket](https://blog.logrocket.com/how-to-build-a-rest-api-with-golang-using-gin-and-gorm/)
 * [Calhoun.io](https://www.calhoun.io/connecting-to-a-postgresql-database-with-gos-database-sql-package/)
