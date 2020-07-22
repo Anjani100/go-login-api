@@ -31,7 +31,7 @@ That is all for this project. Hope this helps!
 
 ## Update
 
-I have replaced the return type of requests from JSON to HTTP, so now it is available in forms format. You can fire up your browser and visit *127.0.0.1:8080* and then fill up the register form to sign up yourself. All the styling files are in the html folder and the database schema is provided in the db directory. I've used [Materialize-css](https://materializecss.com/) for styling purposes.
+I have replaced the return type of requests from JSON to HTTP, so now it is available in forms format. You can fire up your browser and visit *127.0.0.1:8080* and then fill up the register form to sign up yourself. Although, the response is still in JSON, so you will see your user data if registered/login successfully or you will see the error in JSON format if any error is encountered while filling up the form. the All the styling files are in the html folder and the database schema is provided in the db directory. I've used [Materialize-css](https://materializecss.com/) for styling purposes.
 
 #### Resources Used: 
 * [LogRocket](https://blog.logrocket.com/how-to-build-a-rest-api-with-golang-using-gin-and-gorm/)
