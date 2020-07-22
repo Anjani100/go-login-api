@@ -11,6 +11,7 @@ import (
 type CreateUserInput struct {
 	Username string `form:"username" binding:"required"`
 	Password string `form:"password" binding:"required"`
+	ConfirmPassword string `form:"password2" binding:"required"`
 }	// UserID will be generated automatically by the database
 
 type LoginUserInput struct {
@@ -34,6 +35,10 @@ func CreateUser(c *gin.Context) {
 	_, err = strconv.ParseFloat(user.Password, 64)
 	if err == nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Password cannot be all numeric."})
+		return
+	}
+	if user.Password != user.ConfirmPassword {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "The 2 passwords do not match."})
 		return
 	}
 
