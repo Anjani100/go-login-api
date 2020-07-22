@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"fmt"
+	"strconv"
 	"net/http"
 	"github.com/gin-gonic/gin"
 	"github.com/Anjani100/go-login-api/models"
@@ -23,6 +24,16 @@ func CreateUser(c *gin.Context) {
 	err := c.Bind(&user)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	passwordlen := len(user.Password)
+	if passwordlen < 8 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Password cannot be less than 8 characters."})
+		return
+	}
+	_, err = strconv.ParseFloat(user.Password, 64)
+	if err == nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Password cannot be all numeric."})
 		return
 	}
 
